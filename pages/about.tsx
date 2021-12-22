@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Layout from '../components/layout'
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <Layout home>
 
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
               <div className="col-4 hero-left">
                 <div className="inner-content">
-                  <h4>Art By Eva</h4>
+                  <h4>About</h4>
                 </div>
               </div>
 
@@ -30,4 +30,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default About
