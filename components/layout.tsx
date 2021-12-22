@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Layout: NextPage<{ home?: boolean }> = ({ children, home: boolean }) => {
   return (
-    <div>
+    <>
       <Head>
 
         <title>Create Next App</title>
@@ -28,7 +28,7 @@ const Layout: NextPage<{ home?: boolean }> = ({ children, home: boolean }) => {
               <div className="container-fluid">
                 <Link href="/">
                   <a className="navbar-brand">
-                    <img alt="Art By Eva Logo" src="/images/logo.png" />
+                    <img alt="Art By Eva Logo" src="/images/logo-2.png" />
                   </a>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,12 @@ const Layout: NextPage<{ home?: boolean }> = ({ children, home: boolean }) => {
                         <a className="nav-link">About</a>
                       </Link>
                     </li>
-                    <li className="nav-item dropdown">
+                    <li className="nav-item">
+                      <Link href="/art-work">
+                        <a className="nav-link">Art Work</a>
+                      </Link>
+                    </li>
+                    {/* <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
                       </a>
@@ -59,12 +64,12 @@ const Layout: NextPage<{ home?: boolean }> = ({ children, home: boolean }) => {
                     </li>
                     <li className="nav-item">
                       <a className="nav-link disabled" href="#" aria-disabled="true">Disabled</a>
-                    </li>
+                    </li>*/}
                   </ul>
-                  <form className="d-flex">
+                  {/*<form className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     <button className="btn btn-outline-success" type="submit">Search</button>
-                  </form>
+                  </form> */}
                 </div>
               </div>
             </nav>
@@ -75,7 +80,7 @@ const Layout: NextPage<{ home?: boolean }> = ({ children, home: boolean }) => {
 
       {children}
 
-    </div>
+    </>
   )
 }
 
