@@ -17,6 +17,7 @@ a {
 
 .main-header {
   min-height: 80px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .bg-light {
@@ -38,8 +39,55 @@ a {
   left: 50%;
 }
 
+.hero-left .inner-content h4,
+.hero-left .inner-content h5,
+.hero-left .inner-content p {
+  color: white;
+}
+
 @media (max-width: 992px){
   .hero-left {
     padding: 25% 0px;
   }
+}
+
+.btn-secondary {
+  background-color: white;
+  color: rgb(239, 111, 88);
+  border-color: white;
+}
+
+section.section {
+  margin-top: 20px;
+  padding: 100px 0 0 0;
+  position: relative;
+  z-index: 9;
+}
+
+section.section header h6 {
+  position: relative;
+  font-size: 15px;
+  color: #fb5849;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-left: 40px;
+}
+
+section.section header h6:before {
+  width: 30px;
+  height: 1px;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  background-color: #fb5849;
+}
+
+section.section header h2 {
+  line-height: 40px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #2a2a2a;
 }

@@ -7,18 +7,21 @@ const About: NextPage = () => {
   return (
     <Layout home>
 
-      <section>
-        <div className="container-fluid">
+      <section className="section">
+        <div className="container">
             <div className="row">
 
-              <div className="col-4 hero-left">
-                <div className="inner-content">
-                  <h4>About</h4>
-                </div>
+              <div className="col-12 col-md-6">
+                <header>
+                  <h6>About Me</h6>
+                  <h2>A young and creative mind</h2>
+                  <p>My name is Eva, and i&apos;m currently 10 years old.</p>
+                  <p>I enjoy paining on canvas in my spare time.</p>
+                </header>
               </div>
 
-              <div className="col-8 p-0">
-                <img alt="Art By Eva Cover Photo" src="/images/slide-02.jpeg" />
+              <div className="col-12 col-md-6">
+                <img alt="Be Happy Canvas" src="/images/be-happy.jpeg" width="100%" />
               </div>
 
           </div>

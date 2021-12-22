@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
+import Link from 'next/link'
 
 import Layout from '../components/layout'
 
@@ -13,6 +13,12 @@ const Home: NextPage = () => {
               <div className="col-12 col-md-4 hero-left">
                 <div className="inner-content">
                   <h4>Art By Eva</h4>
+                  <h5>All Original Artwork</h5>
+                  <p>
+                    <Link href="/art-work">
+                      <a className="btn btn-secondary">View Art Work</a>
+                    </Link>
+                  </p>
                 </div>
               </div>
 
