@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link';
 
 import Layout from '../components/layout'
 
@@ -15,6 +16,7 @@ export async function getStaticProps() {
 }
 
 interface IArt {
+  id: string;
   title: string;
   price: number;
   img: string;
@@ -51,6 +53,9 @@ const ArtWork: NextPage<{allArtData: IArt[]}> = ({ allArtData }) => {
                       <img alt="Canvas 1" src={x.img} width="100%" />
                       <div className="info">
                         <h4>{x.title}</h4>
+                        <Link href={`/artWork/${x.id}`}>
+                          <a>View More</a>
+                        </Link>
                       </div>
                     </div>
                   </div>
