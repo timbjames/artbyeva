@@ -48,16 +48,17 @@ const ArtWork: NextPage<{allArtData: IArt[]}> = ({ allArtData }) => {
               allArtData.map(x => {
                 return (
                   <div className="col flex-wrap-25" key={x.title}>
-                    <div className="card">
-                      <div className="price">£{x.price}</div>
-                      <img alt="Canvas 1" src={x.img} width="100%" />
-                      <div className="info">
-                        <h4>{x.title}</h4>
-                        <Link href={`/artWork/${x.id}`}>
-                          <a>View More</a>
-                        </Link>
-                      </div>
-                    </div>
+                    <Link href={`/artWork/${x.id}`}>
+                      <a>
+                        <div className="card">
+                          <div className="price">£{x.price}</div>
+                          <img alt="Canvas 1" src={x.img} width="100%" />
+                          <div className="info">
+                            <h4>{x.title}</h4>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
                   </div>
                 )
               })

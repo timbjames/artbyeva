@@ -1,5 +1,6 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/artWork'
+import Link from 'next/link';
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();
@@ -22,10 +23,11 @@ interface IArt {
     title: string;
     price: number;
     img: string;
-  }
+    contentHtml: string;
+}
 
 export async function getStaticProps({ params }: IParams) {
-    const postData = getPostData(params.id);
+    const postData = await getPostData(params.id);
 
     return {
         props: {
@@ -37,11 +39,35 @@ export async function getStaticProps({ params }: IParams) {
 export default function Post({ postData }: IPostData) {
     return (
         <Layout>
-            {postData.title}
-            <br />
-            {postData.price}
-            <br />
-            {postData.img}
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <div className="back">
+                            <Link href="/art-work">
+                                <a>Back</a>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <section className="section">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-6">
+                            <header>
+                                <h6>{postData.title}</h6>
+                            </header>
+                            Price: &pound;{postData.price}
+                            <br />
+                            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <img alt={postData.title} src={postData.img} width="100%" />
+                        </div>
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }

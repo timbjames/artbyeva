@@ -148,3 +148,14 @@ footer {
   background-color: #fb5849;
   color: white;
 }
+
+.back {
+  padding-top: 20px;
+  margin-bottom: -20px;
+}
+
+.back a::before {
+  content: "<";
+  width: 20px;
+  padding-right: 10px;
+}
