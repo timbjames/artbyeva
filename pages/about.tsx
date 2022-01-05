@@ -16,7 +16,7 @@ const About: NextPage = () => {
                   <h6>About Me</h6>
                   <h2>A young and creative mind</h2>
                   <p>My name is Eva, and i&apos;m currently 10 years old.</p>
-                  <p>I enjoy paining on canvas in my spare time.</p>
+                  <p>I enjoy painting on canvas in my spare time.</p>
                 </header>
               </div>
 
