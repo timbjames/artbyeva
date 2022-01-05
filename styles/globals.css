@@ -159,3 +159,24 @@ footer {
   width: 20px;
   padding-right: 10px;
 }
+
+div.card div.sold {
+  background-color: green;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  transform: translate(-50%,-50%) rotate(325deg);
+}
+
+section.details div.sold {
+  background-color: green;
+  position: absolute;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 700;
+  font-size: 52px;
+}

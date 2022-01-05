@@ -24,6 +24,7 @@ interface IArt {
     price: number;
     img: string;
     contentHtml: string;
+    isSold?: boolean;
 }
 
 export async function getStaticProps({ params }: IParams) {
@@ -51,7 +52,7 @@ export default function Post({ postData }: IPostData) {
                 </div>
             </div>
             
-            <section className="section">
+            <section className="section details">
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-6">
@@ -63,6 +64,13 @@ export default function Post({ postData }: IPostData) {
                             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
                         </div>
                         <div className="col-12 col-md-6">
+                            {
+                                postData.isSold && (
+                                    <div className="sold">
+                                        Sold
+                                    </div>
+                                )
+                            }
                             <img alt={postData.title} src={postData.img} width="100%" />
                         </div>
                     </div>

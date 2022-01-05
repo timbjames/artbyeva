@@ -20,6 +20,7 @@ interface IArt {
   title: string;
   price: number;
   img: string;
+  isSold?: boolean;
 }
 
 const ArtWork: NextPage<{allArtData: IArt[]}> = ({ allArtData }) => {
@@ -56,6 +57,13 @@ const ArtWork: NextPage<{allArtData: IArt[]}> = ({ allArtData }) => {
                           <div className="info">
                             <h4>{x.title}</h4>
                           </div>
+                          {
+                            x.isSold && (
+                              <div className="position-absolute top-50 start-50 sold">
+                                Sold
+                              </div>
+                            )
+                          }
                         </div>
                       </a>
                     </Link>
