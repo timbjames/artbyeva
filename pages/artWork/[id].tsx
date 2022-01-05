@@ -87,6 +87,56 @@ export default function Post({ postData }: IPostData) {
                             <br />
                             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
 
+                            <div className="d-none d-md-block">
+                                <header>
+                                    <h6>Enquire</h6>
+                                </header>
+                                {
+                                    !messageSent
+                                    ? (
+                                        <>
+                                            <p>Please complete the following fields to send an enquiry.</p>
+                                            <form onSubmit={sendEnquiry}>
+                                                <div className="mb-3">
+                                                    <label className="form-label">Name</label>
+                                                    <input type="text" className="form-control" value={name} onChange={(e) => {setName(e.currentTarget.value)}} />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label className="form-label">Email</label>
+                                                    <input type="text" className="form-control" value={email} onChange={(e) => {setEmail(e.currentTarget.value)}} />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label className="form-label">Message</label>
+                                                    <textarea className="form-control" value={message} onChange={(e) => {setMessage(e.currentTarget.value)}}>
+                                                    </textarea>
+                                                </div>
+                                                <button type="submit" className="btn btn-primary" disabled={messageSending}>
+                                                    {
+                                                        messageSending ? 'Processing' : 'Enquire Now'
+                                                    }
+                                                </button>
+                                            </form>
+                                        </>
+                                    )
+                                    : (
+                                        <p>Your Enquiry has been submitted.</p>
+                                    )
+                                }
+                            </div>
+                            
+                        </div>
+                        <div className="col-12 col-md-6">
+                            {
+                                postData.isSold && (
+                                    <div className="sold">
+                                        Sold
+                                    </div>
+                                )
+                            }
+                            <img alt={postData.title} src={postData.img} width="100%" />
+                        </div>
+
+                        <div className="col-12 d-block d-md-none p-3">
                             <header>
                                 <h6>Enquire</h6>
                             </header>
@@ -121,16 +171,6 @@ export default function Post({ postData }: IPostData) {
                                     <p>Your Enquiry has been submitted.</p>
                                 )
                             }
-                        </div>
-                        <div className="col-12 col-md-6">
-                            {
-                                postData.isSold && (
-                                    <div className="sold">
-                                        Sold
-                                    </div>
-                                )
-                            }
-                            <img alt={postData.title} src={postData.img} width="100%" />
                         </div>
                     </div>
                 </div>
