@@ -20,6 +20,7 @@ interface IArt {
   title: string;
   price: number;
   img: string;
+  imgSmall: string;
   isSold?: boolean;
 }
 
