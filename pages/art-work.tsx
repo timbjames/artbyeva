@@ -53,7 +53,7 @@ const ArtWork: NextPage<{allArtData: IArt[]}> = ({ allArtData }) => {
                       <a>
                         <div className="card">
                           <div className="price">£{x.price}</div>
-                          <img alt="Canvas 1" src={x.img} width="100%" />
+                          <img alt="Canvas 1" src={x.imgSmall} width="100%" />
                           <div className="info">
                             <h4>{x.title}</h4>
                           </div>
