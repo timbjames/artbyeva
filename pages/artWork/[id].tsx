@@ -108,6 +108,7 @@ export default function Post({ postData }: IPostData) {
                                                 <div className="mb-3">
                                                     <label className="form-label">Message</label>
                                                     <textarea className="form-control" value={message} onChange={(e) => {setMessage(e.currentTarget.value)}}>
+                                                        I am interested in {postData.title}
                                                     </textarea>
                                                 </div>
                                                 <button type="submit" className="btn btn-primary" disabled={messageSending}>
