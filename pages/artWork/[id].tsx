@@ -42,7 +42,7 @@ export default function Post({ postData }: IPostData) {
 
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
-    const [ message, setMessage ] = useState('');
+    const [ message, setMessage ] = useState(`I am interested in ${postData.title}`);
     const [ messageSending, setMessageSending ] = useState(false);
     const [ messageSent, setMessageSent ] = useState(false);
 
@@ -107,8 +107,7 @@ export default function Post({ postData }: IPostData) {
                                                 </div>
                                                 <div className="mb-3">
                                                     <label className="form-label">Message</label>
-                                                    <textarea className="form-control" value={message} onChange={(e) => {setMessage(e.currentTarget.value)}}>
-                                                        I am interested in {postData.title}
+                                                    <textarea className="form-control" value={message} onChange={(e) => {setMessage(e.currentTarget.value)}}>                                                        
                                                     </textarea>
                                                 </div>
                                                 <button type="submit" className="btn btn-primary" disabled={messageSending}>
